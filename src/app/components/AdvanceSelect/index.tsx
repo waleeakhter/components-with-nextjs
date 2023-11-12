@@ -16,7 +16,6 @@ const Select = ({ options, className, label }: MySelectProps) => {
     const _options = options ? options.map(val => ({ value: val?._id, label: val?.name })) : []
     return (
         <div className='relative'>
-            <label className='absolute z-50' htmlFor='select'>{label}</label>
             <ReactSelect className={className} isClearable placeholder=""
                 components={{ Control: (props) => Control(props, label ?? "Select...") }} styles={_customStyles} id='select' options={_options} />
         </div>
